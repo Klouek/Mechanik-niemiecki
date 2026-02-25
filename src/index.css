@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", sans-serif;
+  --font-tech: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-ink: #050505;
+  --color-charcoal: #121212;
+  --color-slate: #1e1e1e;
+  --color-signal: #FF4E00;
+  --color-signal-hover: #CC3E00;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: #e5e5e5;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-signal);
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.crosshair {
+  position: relative;
+}
+.crosshair::before, .crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-signal);
+}
+.crosshair-tl::before { top: 0; left: 0; width: 10px; height: 1px; }
+.crosshair-tl::after { top: 0; left: 0; width: 1px; height: 10px; }
+.crosshair-tr::before { top: 0; right: 0; width: 10px; height: 1px; }
+.crosshair-tr::after { top: 0; right: 0; width: 1px; height: 10px; }
+.crosshair-bl::before { bottom: 0; left: 0; width: 10px; height: 1px; }
+.crosshair-bl::after { bottom: 0; left: 0; width: 1px; height: 10px; }
+.crosshair-br::before { bottom: 0; right: 0; width: 10px; height: 1px; }
+.crosshair-br::after { bottom: 0; right: 0; width: 1px; height: 10px; }
+
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+  color: transparent;
+}
